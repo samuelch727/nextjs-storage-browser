@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import { Amplify } from "aws-amplify";
 import { signOut } from "aws-amplify/auth";
@@ -21,13 +21,7 @@ function Example() {
     elements: elementsDefault,
     config: createAmplifyAuthAdapter({
       options: {
-        defaultPrefixes: [
-          "media-readwritedelete/",
-          "media-readonly/",
-          "shared-folder-readwrite/",
-          (identityId: string) => `protected-useronlyreadwritedelete/${identityId}/`,
-          (identityId: string) => `private-useronlyreadwritedelete/${identityId}/`,
-        ],
+        defaultPrefixes: ["intraop-images/"],
       },
     }),
   });
